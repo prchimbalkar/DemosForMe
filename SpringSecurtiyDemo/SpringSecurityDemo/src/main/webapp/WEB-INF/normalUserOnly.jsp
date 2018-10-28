@@ -1,10 +1,10 @@
 <html>
 <head>
 <title>
-MyFirstNormalJspPage
+Only for Normal USERS JspPage
 </title>
 </head>
 <body>
-Normal Page
+Page for ONLY normal users
 </body>
 </html>

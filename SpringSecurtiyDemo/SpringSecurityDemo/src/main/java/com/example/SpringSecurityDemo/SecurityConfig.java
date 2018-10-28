@@ -12,17 +12,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 	
-		auth.inMemoryAuthentication().withUser("user").password("{noop}pwd")
-		.authorities("USER");
+		auth.inMemoryAuthentication().withUser("usr").password("{noop}pwd").authorities("USER").and()
+			.withUser("adm").password("{noop}pwd").authorities("ADMIN");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
+				.antMatchers("/getAdminPage").hasAuthority("ADMIN")
+				.antMatchers("/getNormalUserPage").hasAnyAuthority("ADMIN","USER")
+				.antMatchers("/getOnlyNormalUserPage").hasAuthority("USER")
 				.anyRequest().authenticated()
 				.and()
-			.formLogin().defaultSuccessUrl("/getMyPage").failureForwardUrl("/loginFailed").and()
+			.formLogin().loginPage("/loginCustomPage").permitAll().defaultSuccessUrl("/getMyPage").failureForwardUrl("/loginFailed").and()
+			.csrf().disable()
 			.httpBasic();
 	}
 }

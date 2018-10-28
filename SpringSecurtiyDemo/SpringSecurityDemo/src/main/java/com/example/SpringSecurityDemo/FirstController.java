@@ -16,15 +16,27 @@ public String getAdminPage(String name) {
 	return "admin";
 }
 
+
 @RequestMapping("/getNormalUserPage")	
 public String getNormalUserPage(String name) {
 	return "normalPage";
 }
 
+@RequestMapping("/getOnlyNormalUserPage")	
+public String getOnlyNormalUserPage(String name) {
+	return "normalUserOnly";
+}
 
 @RequestMapping("/loginFailed")	
 public String loginFailed(String name) {
 	return "loginFailedPage";
+}
+
+
+
+@RequestMapping("/loginCustomPage")	
+public String getLoginCustomPage(String name) {
+	return "loginCustomPage";
 }
 
 }
