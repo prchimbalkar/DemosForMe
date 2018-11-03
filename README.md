@@ -16,3 +16,15 @@ Spring Boot version : 1.5.1
 --------------------------------------------------------------------------------------------
 In memory authentication.
 Authority wise access separation
+
+--------------------------------------------------------------------------------------------
+3. HATEOAS Spring demo
+--------------------------------------------------------------------------------------------
+Hypertext as the Engine of Application State (HATEOAS)
+
+HATEOAS is principle of guiding user through REST application through informing them about next potential step.
+
+In this demo I have created StandardController for Cars which
+
+1. Returns all cars (with hyper media link to cars of each company)
+2. Returns cars of company by company name
