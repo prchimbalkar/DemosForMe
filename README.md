@@ -1,7 +1,7 @@
 # DemosForMe
 Spring demos
 
-1. exp1
+1. exp1 (Spring, Hibernate with H2 )
 -----------------------------------------------------------------------------------------
 Basic demo consist of Spring, Hibernate, H2.
 Single entity, no UI, add operation.
