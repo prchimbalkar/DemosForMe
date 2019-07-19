@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  sample-node-docker-contmainer:
+    image: sample-node-docker:latest
+    container_name: "sample-node-docker-contmainer"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    ports:
+      - "8000:3000"
